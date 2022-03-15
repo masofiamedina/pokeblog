@@ -35,6 +35,7 @@ const Blog = () => {
           ]);
         
         hideModal();
+        window.location.reload(false);
     };
     
 
@@ -46,6 +47,7 @@ const Blog = () => {
 
     const borrarPost = (post) => {
         Axios.delete(`http://localhost:3001/delete/${post}`);
+        window.location.reload(false);
     }
 
 
@@ -114,7 +116,6 @@ const Blog = () => {
             <Card style={{marginBottom:"20px"}}><Card.Img variant="top" src={val.cover_post} />
             <Card.Body style={{textAlign:"right"}}>
                 <Card.Title style={{textAlign:"center"}}>{val.titulo_post}</Card.Title>
-                <Card.Title style={styles.autor}>usuario</Card.Title>
                 <Card.Text style={{textAlign:"justify"}}>{val.cuerpo_post}</Card.Text>
                 <Card.Text style={styles.fecha}>{val.fecha_post}</Card.Text>
                 <button style={{marginTop:"-10px"}} type="button" className="btn-close" onClick={() => {borrarPost(val.titulo_post)}}></button>
@@ -138,10 +139,4 @@ const styles = {
     color:"blue",
     textAlign:"justify",
   },
-
-  autor:{
-    fontFamily:"Comfortaa",
-    fontSize:"1rem",
-    textAlign:"center"
-  }
 };

@@ -1,9 +1,6 @@
 const express = require("express");
-const bodyParser = require('body-parser')
 const mysql = require ("mysql");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
 
 const bcrypt = require('bcrypt')
 const saltRounds = 10
@@ -12,14 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-/*app.use(cors({
-  origin: ["http:/localhost:3000"],
-  methods: ["GET", "POST"],
-  credentials: true,
-}));*/
- 
-app.use(cookieParser())
-app.use(bodyParser.urlencoded({extended: true}))
+
 
 const db = mysql.createConnection({
   user:"root",
@@ -28,17 +18,6 @@ const db = mysql.createConnection({
   database:"blog_pokemon",
 });
 
-app.use(
-  session({
-    key: "userId",
-    secret: "subscribe",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      expires: 60 * 60 * 24
-    },
-  })
-);
 
 //REGISTRO
 app.post('/register', (req, res) => {
@@ -65,13 +44,7 @@ app.post('/register', (req, res) => {
   
 });
 
-app.get("/login", (req, res) => {
-  if (req.session.user) {
-    res.send({loggedIn: true, user: req.session.user})
-  } else {
-    res.send({loggedIn: false});
-  }
-})
+
 
 //LOGIN
 app.post('/login', (req,res) => {
@@ -88,14 +61,11 @@ app.post('/login', (req,res) => {
       if (result.length > 0) {
           bcrypt.compare(password, result[0].password, (error, response) => {
             if (response) {
-              res.send(result)
+              res.send(result);
             } else {
               res.send({ message: "Usuario o contraseña incorrectos!"});
             }
           });
-          /*req.session.user = result;
-          console.log(req.session.user);
-          res.send(result)*/
       } else {
           res.send({ message: "El usuario no existe"});
         }
@@ -127,7 +97,6 @@ app.get('/get', (req, res) => {
 });
 
 //ELIMINAR POST
-
 app.delete('/delete/:titulo', (req, res) => {
   const titulo = req.params.titulo
   const sqlDelete =

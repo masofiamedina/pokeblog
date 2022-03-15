@@ -62,13 +62,14 @@ class App extends Component {
               <div className="col-sm-4">
                 <div className="jumbotron">
                 <div style={styles.h4}>Entrenador Pokémon</div>
-                  <Registro/> <Login/>
+                <div style={styles.centrar}><Registro/> <Login/></div>
+                  
           <br></br>
                   
 
                   <div style={styles.h4}>Buscar Pokémon!</div>
                     <Buscador datosBusqueda={this.datosBusqueda} />
-                      <Resultado pokemon={this.state.pokemon} />
+                    <div style={styles.centrar}><Resultado pokemon={this.state.pokemon} /></div>
                       <br></br>
                   <div style={styles.h4}>Poké-Noticias!</div>
                     <Twitter />
@@ -93,7 +94,7 @@ const styles = {
       fontFamily:"Righteous",
       fontSize: "2rem",
       textAlign: "center",
-      marginTop: "10px"
+      marginTop: "10px",
   },
 
   h3: {
@@ -101,5 +102,11 @@ const styles = {
     fontSize: "4rem",
     textAlign: "center",
     marginTop: "-25px",
-}
+},
+
+  centrar: {
+    textAlign: "center",
+  },
+
+
 };

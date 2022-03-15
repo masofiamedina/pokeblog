@@ -19,7 +19,6 @@ const Login = () => {
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
  
-    
 
     const login = () => {
       Axios.post("http://localhost:3001/login", {
@@ -32,10 +31,9 @@ const Login = () => {
           setLoginStatus(response.data[0].username)
           hideModal();
         }
-        
       });
-      
     };
+
 
     const [ loginStatus, setLoginStatus ] = useState("");
 
@@ -43,9 +41,10 @@ const Login = () => {
 
   return (
     <>
+    <button onClick={showModal} type="button" className="btn btn-success">Ingresar</button>
       <div className="row">
           <div className="col-7" style={styles.nombre}>
-              ¡Bienvenidx {username}! ¿Qué Pokémones viste hoy?
+              ¡Bienvenidx {loginStatus}! ¿Qué Pokémones viste hoy?
           </div>
           <div className="col-4">
               <img src={oak} alt={username} style={styles.fotoPerfil} />
@@ -53,14 +52,14 @@ const Login = () => {
       </div>
  
 
-      <button onClick={showModal} type="button" className="btn btn-success">Ingresar</button>
+      
       <Modal show={isOpen} onHide={hideModal} backdrop="static" keyboard={false}>
    
         <Modal.Header>
           <Modal.Title>Ingresa a PokéBlog!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Alert variant="danger">{ loginStatus }</Alert>
+        <Alert variant="danger" style={{textTransform:"capitalize",}}>{ loginStatus }</Alert>
         <Form>
           <FormGroup>
                 <Label for="username">
