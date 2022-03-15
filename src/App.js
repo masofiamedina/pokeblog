@@ -36,7 +36,7 @@ class App extends Component {
     render() {
 
       const fondo = require("./assets/imagenfondo.jpeg")
-      const cabecera = require("./assets/cabecera.jpg")
+      const cabecera = require("./assets/header.jpg")
   
 
       return (
