@@ -78,9 +78,6 @@ app.post('/login', (req,res) => {
   const username = req.body.username
   const password = req.body.password
 
-  console.log(username)
-  console.log(password)
-
   db.query(
     "SELECT * FROM usuarios WHERE username = ?;", 
     username, 
