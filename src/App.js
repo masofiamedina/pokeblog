@@ -37,29 +37,29 @@ class App extends Component {
 
       const fondo = require("./assets/imagenfondo.jpeg")
       const cabecera = require("./assets/cabecera.jpg")
-      //const { isAuthenticated } = useAuth0()
+  
 
       return (
         <div className="app container" style={{backgroundImage:`url(${fondo})`}}>
           
-            <div class="row">
-              <div class="col-12">
-                <div class="jumbotron">
+            <div className="row">
+              <div className="col-12">
+                <div className="jumbotron">
                   <img src={cabecera} className="img-fluid" alt="cabecera"  />
                 </div>
               </div>
             </div>
 
 
-            <div class="row">
-              <div class="col-sm-8 text-center">
+            <div className="row">
+              <div className="col-sm-8 text-center">
                 <div className="jumbotron">
-                <div style={styles.h3}>Poké-Blog!</div>
+                <div style={styles.h3}>Pokéblog!</div>
                 <Blog/>
                 </div>
               </div>
 
-              <div class="col-sm-4">
+              <div className="col-sm-4">
                 <div className="jumbotron">
                 <div style={styles.h4}>Entrenador Pokémon</div>
                   <Registro/> <Login/>
@@ -86,8 +86,6 @@ class App extends Component {
 }
 
 export default App;
-
-//{isAuthenticated ? <LogoutButton/> : <LoginButton/>}
 
 
 const styles = {

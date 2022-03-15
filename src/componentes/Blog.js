@@ -112,13 +112,12 @@ const Blog = () => {
 
         return (
             <Card style={{marginBottom:"20px"}}><Card.Img variant="top" src={val.cover_post} />
-            <Card.Body>
-                <Card.Title>{val.titulo_post}</Card.Title>
-                <div style={styles.autor}>usuario</div>
-                <Card.Text style={{textAlign:"justify"}}>{val.cuerpo_post}<div style={styles.fecha}>{val.fecha_post}</div>
-                </Card.Text>
-                <div style={{textAlign:"right",marginTop:"-10px"}}><button type="button" className="btn-close" onClick={() => {borrarPost(val.titulo_post)}}></button></div>
-                
+            <Card.Body style={{textAlign:"right"}}>
+                <Card.Title style={{textAlign:"center"}}>{val.titulo_post}</Card.Title>
+                <Card.Title style={styles.autor}>usuario</Card.Title>
+                <Card.Text style={{textAlign:"justify"}}>{val.cuerpo_post}</Card.Text>
+                <Card.Text style={styles.fecha}>{val.fecha_post}</Card.Text>
+                <button style={{marginTop:"-10px"}} type="button" className="btn-close" onClick={() => {borrarPost(val.titulo_post)}}></button>
             </Card.Body>
             </Card>
             )})
@@ -133,15 +132,16 @@ export default Blog;
 
 const styles = {
   fecha: {
-      fontFamily:"Comfortaa",
-      fontSize: "0.8rem",
-      marginTop: "10px",
-      color:"blue",
+    fontFamily:"Comfortaa",
+    fontSize: "0.8rem",
+    marginTop: "10px",
+    color:"blue",
+    textAlign:"justify",
   },
 
   autor:{
-      fontFamily:"Comfortaa",
-      fontSize:"1rem",
-
+    fontFamily:"Comfortaa",
+    fontSize:"1rem",
+    textAlign:"center"
   }
 };

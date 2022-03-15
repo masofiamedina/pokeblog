@@ -32,7 +32,7 @@ const Registro = () => {
 
   return (
     <>
-      <button onClick={showModal} type="button" class="btn btn-outline-secondary">Registrarme</button>
+      <button onClick={showModal} type="button" className="btn btn-outline-secondary">Registrarme</button>
       <Modal show={isOpen} onHide={hideModal} backdrop="static" keyboard={false}>
         <Modal.Header>
           <Modal.Title>Registro de Nuevo Usuario</Modal.Title>
@@ -81,8 +81,8 @@ const Registro = () => {
             </Form>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick={hideModal} type="button" class="btn btn-danger">Cancelar</button>
-          <button onClick={registrar} type="button" class="btn btn-success">Registrar</button>
+          <button onClick={hideModal} type="button" className="btn btn-danger">Cancelar</button>
+          <button onClick={registrar} type="button" className="btn btn-success">Registrar</button>
         </Modal.Footer>
       </Modal>
     </>

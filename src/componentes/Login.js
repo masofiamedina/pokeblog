@@ -43,15 +43,15 @@ const Login = () => {
     <>
       <div className="row">
           <div className="col-7" style={styles.nombre}>
-              <p>¡Bienvenidx {loginStatus}! ¿Qué Pokémones viste hoy?</p>
+              ¡Bienvenidx {loginStatus}! ¿Qué Pokémones viste hoy?
           </div>
           <div className="col-4">
               <img src={oak} alt={username} style={styles.fotoPerfil} />
           </div>
       </div>
+ 
 
-
-      <button onClick={showModal} type="button" class="btn btn-success">Ingresar</button>
+      <button onClick={showModal} type="button" className="btn btn-success">Ingresar</button>
       <Modal show={isOpen} onHide={hideModal} backdrop="static" keyboard={false}>
         <Modal.Header>
           <Modal.Title>Ingresa a PokéBlog!</Modal.Title>
@@ -87,8 +87,8 @@ const Login = () => {
             </Form>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick={hideModal} type="button" class="btn btn-danger">Cancelar</button>
-          <button onClick={login} type="button" class="btn btn-success">Ingresar</button>
+          <button onClick={hideModal} type="button" className="btn btn-danger">Cancelar</button>
+          <button onClick={login} type="button" className="btn btn-success">Ingresar</button>
         </Modal.Footer>
 
         
