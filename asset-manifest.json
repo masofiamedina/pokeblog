@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/pokeblog/static/css/main.b2f3b3ba.css",
+    "main.js": "/pokeblog/static/js/main.1d70023e.js",
+    "static/js/787.0b916c7e.chunk.js": "/pokeblog/static/js/787.0b916c7e.chunk.js",
+    "static/media/imagenfondo.jpeg": "/pokeblog/static/media/imagenfondo.479882b18a2e616ed21d.jpeg",
+    "static/media/cabecera.jpg": "/pokeblog/static/media/cabecera.05427974f8e3e14f570e.jpg",
+    "static/media/profesoroak.jpg": "/pokeblog/static/media/profesoroak.576cdb0088d79898f220.jpg",
+    "index.html": "/pokeblog/index.html",
+    "main.b2f3b3ba.css.map": "/pokeblog/static/css/main.b2f3b3ba.css.map",
+    "main.1d70023e.js.map": "/pokeblog/static/js/main.1d70023e.js.map",
+    "787.0b916c7e.chunk.js.map": "/pokeblog/static/js/787.0b916c7e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2f3b3ba.css",
+    "static/js/main.1d70023e.js"
+  ]
+}
